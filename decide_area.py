@@ -27,7 +27,7 @@ def load(image_path, img=[]):
 
 
 if __name__ == "__main__":
-    image_path = "images_2/"
+    image_path = "images/"
 
     img = load(image_path)
     img0 = img[0] #元画像
@@ -38,19 +38,19 @@ if __name__ == "__main__":
     w = int(img1.shape[1]/4)
 
     #元画像中の抽出領域の指定
-    x1 = 830
-    y1 = 1305
-    x3 = 1900
-    y3 = 3003
+    x1 = 284
+    y1 = 304
+    x4 = 3247
+    y4 = 2278
 
     #(元画像のpx)/(傾いた画像のpx)
-    shift=0.410
+    shift=699/1290
     w0=int(w*shift)
     h0=int(h*shift)
     x2 = x1+w0
-    x4 = x3+w0
+    x3 = x4-w0
     y2 = y1+h0
-    y4 = y3+h0
+    y3 = y4-h0
 
     # 画像を4つに分割
     cut_img0 = [0]*4
